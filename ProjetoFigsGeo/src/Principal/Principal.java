@@ -1,6 +1,14 @@
 package Principal;
 
 import java.util.Scanner;
+
+import FigurasEspaciais.Cilindro;
+import FigurasEspaciais.Cone;
+import FigurasEspaciais.Cubo;
+import FigurasEspaciais.Esfera;
+import FigurasEspaciais.Paralelepipedo;
+import FigurasEspaciais.Piramide;
+import FigurasEspaciais.Prisma;
 import FigurasPlanas.*;
 
 public class Principal {
@@ -146,6 +154,122 @@ public class Principal {
 	    		}
 	    		
 	    	}		
+	    }else if (escolha == 2) {
+	    	System.out.println("Agora escolha qual figuras você deseja obter a área total e o volume.");
+	    	System.out.println("1 - Cone \n 2 - Cubo \n 3 - Esfera \n 4 - Paralelepipedo\n 5 - Piramide \n 6 - Prisma \n 7 - Cilindro");
+	    	int segundaEscolha = sc.nextInt();
+	    	
+	    	switch (segundaEscolha) {
+	    		case 1: 
+	    			System.out.println("Seu raio é: ");
+		    		double raio = sc.nextDouble();
+		    		
+		    		System.out.println("Sua altura é: ");
+		    		double altura = sc.nextDouble();
+		    		
+	    			Cone cone = new Cone(raio, altura);
+	    			
+	    			cone.calcAreaTotal();
+	    			cone.calcVolume();
+	    			
+	    			System.out.println("Area total do Cone: " + cone.areaTotal);
+	    			System.out.println("Volume do Cone: " + cone.volume);
+	    			break;
+	    		case 2:
+	    			System.out.print("Seu lado é: ");
+		    		double lado = sc.nextDouble();
+		    		
+		    		
+	    			Cubo cubo = new Cubo(lado);
+	    			
+	    			cubo.calcAreaTotal();
+	    			cubo.calcVolume();
+	    			
+	    			System.out.println("Area total do Cubo: " + cubo.areaTotal);
+	    			System.out.println("Volume do Cubo: " + cubo.volume);
+	    			break;
+	    		case 3: 
+	    			System.out.println("Seu raio é: ");
+		    		raio = sc.nextDouble();
+		    		
+	    			Esfera esfera = new Esfera(raio);
+	    			
+	    			esfera.calcAreaTotal();
+	    			esfera.calcVolume();
+	    			
+	    			System.out.println("Area total da Esfera: " + esfera.areaTotal);
+	    			System.out.println("Volume da Esfera: " + esfera.volume);
+	    			break;
+	    		case 4:
+	    			System.out.println("Sua altura é: ");
+		    		altura = sc.nextDouble();
+		    		
+		    		System.out.println("Sua largura é: ");
+		    		double largura = sc.nextDouble();
+		    		
+		    		System.out.println("Seu comprimento é: ");
+		    		double comprimento = sc.nextDouble();
+		    		
+	    			Paralelepipedo parale = new Paralelepipedo(comprimento, altura, largura);
+	    			
+	    			parale.calcAreaTotal();
+	    			parale.calcVolume();
+	    			
+	    			System.out.println("Area total do Paralelepipedo: " + parale.areaTotal);
+	    			System.out.println("Volume do Paralelepipedo: " + parale.volume);
+	    			break;
+	    		case 5:
+	    			System.out.println("Sua altura é: ");
+		    		altura = sc.nextDouble();
+		    		
+		    		System.out.println("Sua base é: ");
+		    		double base = sc.nextDouble();
+
+		    		
+	    			Piramide piramide = new Piramide(altura, base);
+	    			
+	    			piramide.calcAreaTotal();
+	    			piramide.calcVolume();
+	    			
+	    			System.out.println("Area total da Piramide: " + piramide.areaTotal);
+	    			System.out.println("Volume da Piramide: " + piramide.volume);
+	    			break;
+	    		case 6:
+	    			System.out.println("Sua altura é: ");
+		    		altura = sc.nextDouble();
+		    		
+		    		System.out.println("Sua largura é: ");
+		    		largura = sc.nextDouble();
+
+		    		System.out.println("Sua face lateral é: ");
+		    		double faceLateral = sc.nextDouble();
+		    		
+		    		
+	    			Prisma prisma = new Prisma(altura, largura, faceLateral);
+	    			
+	    			prisma.calcAreaTotal();
+	    			prisma.calcVolume();
+	    			
+	    			System.out.println("Area total do Prisma: " + prisma.areaTotal);
+	    			System.out.println("Volume do Prisma: " + prisma.volume);
+	    			break;
+	    		case 7: 
+	    			System.out.println("Sua base é: ");
+		    		base = sc.nextDouble();
+		    		
+		    		System.out.println("Sua altura é: ");
+		    		altura = sc.nextDouble();
+
+		    		
+	    			Cilindro cilindro = new Cilindro(base, altura);
+	    			
+	    			cilindro.calcAreaTotal();
+	    			cilindro.calcVolume();
+	    			
+	    			System.out.println("Area total do Cilindro: " + cilindro.areaTotal);
+	    			System.out.println("Volume do Cilindro: " + cilindro.volume);
+	    			break;
+	    	}
 	    }
 	}
 }
